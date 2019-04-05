@@ -376,5 +376,25 @@ namespace BeatSaberModManager
             Process.Start("https://discord.gg/beatsabermods");
         }
         #endregion
+
+        private void labelModSaber1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/Slaynash");
+        }
+
+        private void tabPageCredits_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

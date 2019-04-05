@@ -63,6 +63,8 @@
             this.textBoxPluginsPath = new System.Windows.Forms.TextBox();
             this.helpInfoLabel3 = new System.Windows.Forms.Label();
             this.comboBox_gameVersions = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabControlMain.SuspendLayout();
             this.tabPageCore.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
@@ -202,6 +204,8 @@
             // 
             // tabPageCredits
             // 
+            this.tabPageCredits.Controls.Add(this.linkLabel1);
+            this.tabPageCredits.Controls.Add(this.label5);
             this.tabPageCredits.Controls.Add(this.linkLabelContributors);
             this.tabPageCredits.Controls.Add(this.linkLabellolPants);
             this.tabPageCredits.Controls.Add(this.linkLabelUmbranox);
@@ -215,12 +219,13 @@
             this.tabPageCredits.TabIndex = 1;
             this.tabPageCredits.Text = "Mod Manager Credits";
             this.tabPageCredits.UseVisualStyleBackColor = true;
+            this.tabPageCredits.Click += new System.EventHandler(this.tabPageCredits_Click);
             // 
             // linkLabelContributors
             // 
             this.linkLabelContributors.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabelContributors.AutoSize = true;
-            this.linkLabelContributors.Location = new System.Drawing.Point(232, 137);
+            this.linkLabelContributors.Location = new System.Drawing.Point(231, 147);
             this.linkLabelContributors.Name = "linkLabelContributors";
             this.linkLabelContributors.Size = new System.Drawing.Size(73, 13);
             this.linkLabelContributors.TabIndex = 7;
@@ -232,7 +237,7 @@
             // 
             this.linkLabellolPants.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabellolPants.AutoSize = true;
-            this.linkLabellolPants.Location = new System.Drawing.Point(386, 92);
+            this.linkLabellolPants.Location = new System.Drawing.Point(424, 101);
             this.linkLabellolPants.Name = "linkLabellolPants";
             this.linkLabellolPants.Size = new System.Drawing.Size(48, 13);
             this.linkLabellolPants.TabIndex = 5;
@@ -244,7 +249,7 @@
             // 
             this.linkLabelUmbranox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabelUmbranox.AutoSize = true;
-            this.linkLabelUmbranox.Location = new System.Drawing.Point(302, 114);
+            this.linkLabelUmbranox.Location = new System.Drawing.Point(301, 124);
             this.linkLabelUmbranox.Name = "linkLabelUmbranox";
             this.linkLabelUmbranox.Size = new System.Drawing.Size(60, 13);
             this.linkLabelUmbranox.TabIndex = 4;
@@ -256,7 +261,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(174, 114);
+            this.label3.Location = new System.Drawing.Point(173, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(134, 13);
             this.label3.TabIndex = 3;
@@ -266,7 +271,7 @@
             // 
             this.labelModSaber2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelModSaber2.AutoSize = true;
-            this.labelModSaber2.Location = new System.Drawing.Point(329, 92);
+            this.labelModSaber2.Location = new System.Drawing.Point(367, 101);
             this.labelModSaber2.Name = "labelModSaber2";
             this.labelModSaber2.Size = new System.Drawing.Size(60, 13);
             this.labelModSaber2.TabIndex = 2;
@@ -276,7 +281,7 @@
             // 
             this.linkLabelModSaberLink.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.linkLabelModSaberLink.AutoSize = true;
-            this.linkLabelModSaberLink.Location = new System.Drawing.Point(273, 92);
+            this.linkLabelModSaberLink.Location = new System.Drawing.Point(311, 101);
             this.linkLabelModSaberLink.Name = "linkLabelModSaberLink";
             this.linkLabelModSaberLink.Size = new System.Drawing.Size(60, 13);
             this.linkLabelModSaberLink.TabIndex = 1;
@@ -288,11 +293,12 @@
             // 
             this.labelModSaber1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelModSaber1.AutoSize = true;
-            this.labelModSaber1.Location = new System.Drawing.Point(92, 92);
+            this.labelModSaber1.Location = new System.Drawing.Point(84, 101);
             this.labelModSaber1.Name = "labelModSaber1";
-            this.labelModSaber1.Size = new System.Drawing.Size(187, 13);
+            this.labelModSaber1.Size = new System.Drawing.Size(232, 13);
             this.labelModSaber1.TabIndex = 0;
-            this.labelModSaber1.Text = "Mod Hosting Platform Provided by ";
+            this.labelModSaber1.Text = "Original Mod Hosting Platform Provided by ";
+            this.labelModSaber1.Click += new System.EventHandler(this.labelModSaber1_Click);
             // 
             // tabPageHelp
             // 
@@ -445,6 +451,29 @@
             this.comboBox_gameVersions.TabIndex = 11;
             this.comboBox_gameVersions.SelectedIndexChanged += new System.EventHandler(this.comboBox_gameVersions_SelectedIndexChanged);
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(218, 79);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Updated by";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(281, 79);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(52, 13);
+            this.linkLabel1.TabIndex = 9;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Slaynash";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -515,6 +544,8 @@
         private System.Windows.Forms.LinkLabel linkLabelDiscord;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox_gameVersions;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
