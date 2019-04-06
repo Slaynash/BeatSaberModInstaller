@@ -14,7 +14,7 @@ namespace BeatSaberModManager.Core
 {
     class UpdateLogic
     {
-        static readonly string repo = "Umbranoxio/BeatSaberModInstaller";
+        static readonly string repo = "Slaynash/BeatSaberModInstaller";
         static readonly string releaseURL = $"https://api.github.com/repos/{repo}/releases/latest";
 
         public JSONNode LatestRelease()

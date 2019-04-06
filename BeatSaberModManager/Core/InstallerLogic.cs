@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace BeatSaberModManager.Core
 {
@@ -34,20 +35,31 @@ namespace BeatSaberModManager.Core
                 StatusUpdate("Starting install sequence...");
                 foreach (ReleaseInfo release in releases)
                 {
-                    if (release.install)
+                    try
                     {
-                        StatusUpdate(string.Format("Downloading...{0}", release.title));
-                        byte[] file = Helper.GetFile(release.downloadLink);
-                        StatusUpdate(string.Format("Unzipping...{0}", release.title));
-                        Helper.UnzipFile(file, installDirectory);
-                        StatusUpdate(string.Format("Unzipped! {0}", release.title));
+                        if (release.install)
+                        {
+                            StatusUpdate(string.Format("Downloading {0}...", release.title));
+                            byte[] file = Helper.GetFile(release.downloadLink);
+                            StatusUpdate(string.Format("Unzipping {0}...", release.title));
+                            Helper.UnzipFile(file, installDirectory);
+                            StatusUpdate(string.Format("Unzipped {0}", release.title));
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        StatusUpdate("Install failed! (" + release.title + ")");
+                        MessageBox.Show("Install failed!\nUnable to install mod " + release.title + " :\n" + ex.ToString());
+                        return;
                     }
                 }
                 Process.Start(installDirectory + @"\IPA.exe", Quoted(installDirectory + @"\Beat Saber.exe"));
                 StatusUpdate("Install complete!");
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                StatusUpdate("Install failed! " + ex.ToString());
+                StatusUpdate("Install failed!");
+                MessageBox.Show("Install failed! " + ex.ToString());
             }
             
         }

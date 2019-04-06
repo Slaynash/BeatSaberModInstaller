@@ -15,6 +15,12 @@ namespace BeatSaberModManager.Core
             if (groupB.Header == "Other")
                 return -1;
 
+            if (groupA.Header == "Core")
+                return -1;
+            if (groupB.Header == "Core")
+                return 1;
+
+
             float weightA = CalculateWeight(groupA.Items);
             float weightB = CalculateWeight(groupB.Items);
 
